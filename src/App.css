@@ -1,0 +1,38 @@
+#layout {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  /* Full screen height */
+}
+
+#nav {
+  width: 450px;
+  /* Fixed width for left column */
+  padding: 20px;
+}
+
+#main {
+  flex: 1;
+  /* Takes remaining space */
+}
+
+
+
+.mainMenu {
+  padding: 1em 4em;
+}
+
+.pure-menu-link {
+  color: #333;
+  text-decoration: none;
+  padding: 0.5em 1em;
+  display: block;
+}
+
+.pure-menu-selected {
+  background-color: #b3c7e7;
+}
+
+.pure-menu-link:hover {
+  background-color: #b3c7e7;
+}
