@@ -1,15 +1,16 @@
 import { useState } from 'react'
 import './App.css'
-import { Link, Outlet, useLocation } from 'react-router';
+import { Link, Navigate, Outlet, useLocation, useNavigate } from 'react-router';
 
 function App() {
   const location = useLocation();
+  const navigate = useNavigate();
 
   return (
     <>
-      <div id="layout" className="pure-g">
+      <div id="layout">
 
-        <div id="nav" className="pure-u">
+        <div id="nav">
           <div className="pure-menu mainMenu">
             <span className="pure-menu-heading">Toolbox</span>
             <ul className="pure-menu-list">
@@ -26,7 +27,7 @@ function App() {
           </div>
         </div> {/* End of #nav */}
 
-        <div id="main" className="pure-u-1-2">
+        <div id="main">
           <Outlet />
         </div>
       </div>

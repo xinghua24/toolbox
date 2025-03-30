@@ -10,10 +10,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "lorem-ipsum": "^2.0.8",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-router": "^7.4.1",
-    "uuidv4": "^6.2.13"
+    "uuid": "^11.1.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.21.0",

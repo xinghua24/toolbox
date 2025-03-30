@@ -14,6 +14,26 @@
 }
 
 
+input {
+  border-radius: 0.5rem;
+  color: #cfcfcf;
+  background-color: #213547;
+  padding: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+textarea {
+  border-radius: 0.5em;
+  color: #cfcfcf;
+  padding: 0.5em;
+  margin-right: 0.5em;
+  background-color: #213547;
+  scrollbar-color: #213547 #000000;
+  scrollbar-width: thin;
+  caret-color: #cfcfcf;
+}
+
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;

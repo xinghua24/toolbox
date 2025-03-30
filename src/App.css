@@ -6,20 +6,23 @@
 }
 
 #nav {
-  width: 450px;
+  min-width: 250px;
+  max-width: 450px;
   /* Fixed width for left column */
-  padding: 20px;
+
 }
 
 #main {
   flex: 1;
   /* Takes remaining space */
+  padding: 1em;
+  margin-right: 1em;
 }
 
 
 
 .mainMenu {
-  padding: 1em 4em;
+  padding: 1em;
 }
 
 .pure-menu-link {
