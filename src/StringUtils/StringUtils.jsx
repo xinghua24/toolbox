@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { LoremIpsum } from "lorem-ipsum";
 import './StringUtils.modules.css'
+import RandomTextGenerator from './RandomTextGenerator';
 
 
 function StringUtils() {
@@ -66,16 +67,14 @@ function StringUtils() {
                 <p>word count: {countWords(stringInput)} </p>
                 <p>is ASCII: {checkASCIIString(stringInput)}</p>
             </div>
-            <button className="pure-button pure-button-primary" onClick={clearInput}>Clear</button>
+            <button className="pure-button pure-button-primary clearBtn" onClick={clearInput}>Clear</button>
             <br></br>
-            <button className="pure-button pure-button-primary" onClick={() => {
+            <button className="pure-button pure-button-primary getCharCodesBtn" onClick={() => {
                 setStringCharCodes(getStringCharCodes(stringInput));
                 setShowCharCodes(true);
             }}>Get Char Codes</button>
             <textarea readOnly hidden={!showCharCodes} value={stringCharCodes.join(' ')} className='stringUtilsTextArea' rows="10" cols="100%"
                 placeholder="Char codes will be displayed here..." />
-
-
 
 
             <br />
@@ -93,6 +92,10 @@ function StringUtils() {
             <div>
                 <textarea readOnly value={loremText} className='stringUtilsTextArea' rows="10" cols="100%" placeholder="Lorem Ipsum will be generated here..." />
             </div>
+
+
+            <br />
+            <RandomTextGenerator />
         </div>
     )
 }

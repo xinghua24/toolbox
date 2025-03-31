@@ -1,3 +1,11 @@
 .stringUtilsTextArea {
     width: 100%;
 }
+
+.clearBtn {
+    margin: 0.25em;
+}
+
+.getCharCodesBtn {
+    margin: 0.25em;
+}

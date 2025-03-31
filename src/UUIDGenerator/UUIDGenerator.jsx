@@ -20,7 +20,10 @@ function UUIDGenerator() {
             <div>
                 <button className="pure-button  pure-button-primary" onClick={generateUUID}>Generate & Copy</button>
             </div>
-            <div><span className='uuidValue'>{uuidValue}</span></div>
+            <div>
+                <span className='uuidValue'>{uuidValue}</span>
+                <button className="pure-button  pure-button-primary" onClick={() => navigator.clipboard.writeText(uuidValue)}>Copy</button>
+            </div>
         </div>
     )
 }

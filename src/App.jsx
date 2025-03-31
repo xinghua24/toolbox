@@ -20,7 +20,7 @@ function App() {
               <li className={`pure-menu-item ${location.pathname === '/string' ? 'pure-menu-selected' : ''}`}>
                 <Link to="/string" className="pure-menu-link">String Utilities</Link>
               </li>
-              <li className={`pure-menu-item ${location.pathname === '/epoch' ? 'pure-menu-selected' : ''}`}>
+              <li className={`pure-menu-item ${location.pathname === '/time' ? 'pure-menu-selected' : ''}`}>
                 <Link to="/time" className="pure-menu-link">Time Utilities</Link>
               </li>
             </ul>
