@@ -23,6 +23,9 @@ function App() {
               <li className={`pure-menu-item ${location.pathname === '/time' ? 'pure-menu-selected' : ''}`}>
                 <Link to="/time" className="pure-menu-link">Time Utilities</Link>
               </li>
+              <li className={`pure-menu-item ${location.pathname === '/json' ? 'pure-menu-selected' : ''}`}>
+                <Link to="/json" className="pure-menu-link">JSON Editor</Link>
+              </li>
             </ul>
           </div>
         </div> {/* End of #nav */}

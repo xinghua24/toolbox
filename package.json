@@ -14,7 +14,8 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-router": "^7.4.1",
-    "uuid": "^11.1.0"
+    "uuid": "^11.1.0",
+    "vanilla-jsoneditor": "^3.3.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.21.0",
