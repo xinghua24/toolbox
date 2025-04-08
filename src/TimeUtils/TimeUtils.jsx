@@ -1,3 +1,4 @@
+import { Button } from '@chakra-ui/react';
 import React, { useState, useEffect } from 'react';
 
 function TimeUtils() {
@@ -56,19 +57,19 @@ function TimeUtils() {
             <h1>Current Time</h1>
             <p>
                 Current Time: {currentTime}{' '}
-                <button onClick={() => copyToClipboard(currentTime)}>Copy</button>
+                <Button colorPalette="blue" size="sm" variant="surface" m="0.25em" onClick={() => copyToClipboard(currentTime)}>Copy</Button>
             </p>
             <p>
                 Current UTC Time: {currentUTCTime}{' '}
-                <button onClick={() => copyToClipboard(currentUTCTime)}>Copy</button>
+                <Button colorPalette="blue" size="sm" variant="surface" m="0.25em" onClick={() => copyToClipboard(currentUTCTime)}>Copy</Button>
             </p>
             <p>
                 Current Epoch Time(second): {currentEpochTime}{' '}
-                <button onClick={() => copyToClipboard(currentEpochTime)}>Copy</button>
+                <Button colorPalette="blue" size="sm" variant="surface" m="0.25em" onClick={() => copyToClipboard(currentEpochTime)}>Copy</Button>
             </p>
-            <button onClick={togglePause}>
+            <Button colorPalette="blue" size="sm" variant="surface" m="0.25em" onClick={togglePause}>
                 {isPaused ? 'Resume' : 'Pause'}
-            </button>
+            </Button>
 
             <h1>Time Converter</h1>
             <p>
@@ -77,7 +78,7 @@ function TimeUtils() {
                     value={epochInput}
                     onChange={(e) => setEpochInput(e.target.value)}
                 />
-                <button onClick={convertEpochToLocalTime}>Convert</button>
+                <Button colorPalette="blue" size="sm" variant="surface" m="0.25em" onClick={convertEpochToLocalTime}>Convert</Button>
             </p>
             {convertedTime && <p>Converted Time: {convertedTime}</p>}
         </div>

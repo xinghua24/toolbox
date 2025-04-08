@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './StringUtils.modules.css';
+import { Button } from '@chakra-ui/react';
 
 function RandomTextGenerator() {
     const [textLength, setTextLength] = useState(10);
@@ -57,9 +58,9 @@ function RandomTextGenerator() {
                     Include Punctuation
                 </label>
                 <br />
-                <button className="pure-button pure-button-primary" onClick={generateRandomText}>
+                <Button colorPalette="blue" size="sm" variant="surface" m="0.25em" onClick={generateRandomText}>
                     Generate
-                </button>
+                </Button>
                 {randomText && (
                     <div>
                         <textarea

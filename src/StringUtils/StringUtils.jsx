@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { LoremIpsum } from "lorem-ipsum";
 import './StringUtils.modules.css'
 import RandomTextGenerator from './RandomTextGenerator';
+import { Button } from '@chakra-ui/react';
 
 
 function StringUtils() {
@@ -67,12 +68,12 @@ function StringUtils() {
                 <p>word count: {countWords(stringInput)} </p>
                 <p>is ASCII: {checkASCIIString(stringInput)}</p>
             </div>
-            <button className="pure-button pure-button-primary clearBtn" onClick={clearInput}>Clear</button>
+            <Button colorPalette="blue" size="sm" variant="surface" m="0.25em" onClick={clearInput}>Clear</Button>
             <br></br>
-            <button className="pure-button pure-button-primary getCharCodesBtn" onClick={() => {
+            <Button colorPalette="blue" size="sm" variant="surface" m="0.25em" onClick={() => {
                 setStringCharCodes(getStringCharCodes(stringInput));
                 setShowCharCodes(true);
-            }}>Get Char Codes</button>
+            }}>Get Char Codes</Button>
             <textarea readOnly hidden={!showCharCodes} value={stringCharCodes.join(' ')} className='stringUtilsTextArea' rows="10" cols="100%"
                 placeholder="Char codes will be displayed here..." />
 
@@ -80,7 +81,7 @@ function StringUtils() {
             <br />
             <h1>Lorem Ipsum</h1>
             Paragraphs: <input type="number" min="1" max="30" value={loremParagraphs} onChange={e => setLoremParagraphs(e.target.value)} />
-            <button className="pure-button pure-button-primary" onClick={() => {
+            <Button colorPalette="blue" size="md" variant="surface" onClick={() => {
                 var text = generateLorem(loremParagraphs);
                 setLoremText(text);
                 navigator.clipboard.writeText(text).then(() => {
@@ -88,7 +89,7 @@ function StringUtils() {
                 }).catch(err => {
                     console.error('Failed to copy: ', err);
                 });
-            }}>Generate & Copy</button>
+            }}>Generate & Copy</Button>
             <div>
                 <textarea readOnly value={loremText} className='stringUtilsTextArea' rows="10" cols="100%" placeholder="Lorem Ipsum will be generated here..." />
             </div>
