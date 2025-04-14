@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import './App.css'
 import { Link, Navigate, Outlet, useLocation, useNavigate } from 'react-router';
+import { ColorModeButton } from "@/components/ui/color-mode"
+import { Box, Center, Flex, Heading, Text, VStack } from '@chakra-ui/react';
 
 function App() {
   const location = useLocation();
@@ -8,32 +10,39 @@ function App() {
 
   return (
     <>
-      <div id="layout">
+      <Flex id="layout" color="fg" bg="bg.subtle" w="100%" h="100vh" overflow="hidden" flexDirection="column">
+        <Flex id="menu" justify="flex-end" >
+          <ColorModeButton />
+        </Flex>
+        <Flex id="content" flexDirection={{ base: "column", md: "row" }} overflow="hidden">
+          <Flex id='sidebar' min="250px" w={{ base: "100%", md: "350px" }} >
+            <VStack w="100%" alignItems="center">
+              <Center>
+                <Heading w="100%">Toolbox</Heading>
+              </Center>
+              <VStack gap="0" className="menu-list" w="100%">
+                <Box w="100%" className={`menu-item ${location.pathname === '/uuid' || location.pathname === '/' ? 'menu-selected' : ''}`}>
+                  <Link to="/uuid" className="menu-link"><Center>UUID Generator</Center></Link>
+                </Box>
+                <Box w="100%" className={`menu-item ${location.pathname === '/string' ? 'menu-selected' : ''}`}>
+                  <Link to="/string" className="menu-link"><Center>String Utilities</Center></Link>
+                </Box>
+                <Box w="100%" className={`menu-item ${location.pathname === '/time' ? 'menu-selected' : ''}`}>
+                  <Link to="/time" className="menu-link"><Center>Time Utilities</Center></Link>
+                </Box>
+                <Box w="100%" className={`menu-item ${location.pathname === '/json' ? 'menu-selected' : ''}`}>
+                  <Link to="/json" className="menu-link"><Center>JSON Editor</Center></Link>
+                </Box>
+              </VStack>
 
-        <div id="nav">
-          <div className="pure-menu mainMenu">
-            <span className="pure-menu-heading">Toolbox</span>
-            <ul className="pure-menu-list">
-              <li className={`pure-menu-item ${location.pathname === '/uuid' ? 'pure-menu-selected' : ''}`}>
-                <Link to="/uuid" className="pure-menu-link">UUID Generator</Link>
-              </li>
-              <li className={`pure-menu-item ${location.pathname === '/string' ? 'pure-menu-selected' : ''}`}>
-                <Link to="/string" className="pure-menu-link">String Utilities</Link>
-              </li>
-              <li className={`pure-menu-item ${location.pathname === '/time' ? 'pure-menu-selected' : ''}`}>
-                <Link to="/time" className="pure-menu-link">Time Utilities</Link>
-              </li>
-              <li className={`pure-menu-item ${location.pathname === '/json' ? 'pure-menu-selected' : ''}`}>
-                <Link to="/json" className="pure-menu-link">JSON Editor</Link>
-              </li>
-            </ul>
-          </div>
-        </div> {/* End of #nav */}
+            </VStack>
+          </Flex>
 
-        <div id="main">
-          <Outlet />
-        </div>
-      </div>
+          <main id="main">
+            <Outlet />
+          </main>
+        </Flex>
+      </Flex>
     </>
   )
 }

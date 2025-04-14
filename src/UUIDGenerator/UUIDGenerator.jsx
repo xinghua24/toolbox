@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import './UUIDGenerator.modules.css'
 import { v4 as uuidv4 } from 'uuid';
-import { Button, Icon, IconButton, Text } from '@chakra-ui/react';
+import { Button, Flex, Icon, IconButton, Text } from '@chakra-ui/react';
 import { MdContentCopy, MdOutlineContentCopy } from "react-icons/md";
 import { Toaster, toaster } from "@/components/ui/toaster"
 
@@ -11,12 +11,17 @@ function UUIDGenerator() {
     const generateUUID = () => {
         const newUUID = uuidv4();
         setUuidValue(newUUID);
-        navigator.clipboard.writeText(newUUID).then(() => {
+        copyUuidToClipboard()
+
+    }
+
+    const copyUuidToClipboard = () => {
+        navigator.clipboard.writeText(uuidValue).then(() => {
             console.log('UUID copied to clipboard');
             toaster.create({
                 title: "UUID Copied",
                 type: "success"
-            });
+            })
         }).catch(err => {
             console.error('Failed to copy: ', err);
         });
@@ -29,11 +34,11 @@ function UUIDGenerator() {
                     Generate & Copy
                 </Button>
             </div>
-            <div>
-                <Text fontSize="2em">{uuidValue}
-                    <IconButton size='md' variant="ghost" onClick={() => navigator.clipboard.writeText(uuidValue)}><MdOutlineContentCopy fill='#333' /></IconButton>
+            <Flex align-items="baseline">
+                <Text fontSize="2em" fontFamily={['Courier New', 'Courier', 'monospace',]}>{uuidValue}
+                    <IconButton size='sm' variant="surface" onClick={copyUuidToClipboard}><MdOutlineContentCopy fill='#333' /></IconButton>
                 </Text>
-            </div>
+            </Flex>
             <Toaster />
         </div>
     )

@@ -1,41 +1,23 @@
-#layout {
-  display: flex;
-  width: 100%;
-  height: 100vh;
-  /* Full screen height */
-}
-
-#nav {
-  min-width: 250px;
-  max-width: 450px;
-  /* Fixed width for left column */
-
-}
-
 #main {
   flex: 1;
-  /* Takes remaining space */
   padding: 1em;
   margin-right: 1em;
 }
-
-
 
 .mainMenu {
   padding: 1em;
 }
 
-.pure-menu-link {
-  color: #333;
+.menu-link {
   text-decoration: none;
   padding: 0.5em 1em;
   display: block;
 }
 
-.pure-menu-selected {
+.menu-item:hover {
   background-color: #b3c7e7;
 }
 
-.pure-menu-link:hover {
+.menu-selected {
   background-color: #b3c7e7;
 }
