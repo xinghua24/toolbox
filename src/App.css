@@ -1,13 +1,3 @@
-#main {
-  flex: 1;
-  padding: 1em;
-  margin-right: 1em;
-}
-
-.mainMenu {
-  padding: 1em;
-}
-
 .menu-link {
   text-decoration: none;
   padding: 0.5em 1em;

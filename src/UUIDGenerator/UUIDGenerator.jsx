@@ -1,8 +1,7 @@
 import React, { useState } from 'react'
-import './UUIDGenerator.modules.css'
 import { v4 as uuidv4 } from 'uuid';
-import { Button, Flex, Icon, IconButton, Text } from '@chakra-ui/react';
-import { MdContentCopy, MdOutlineContentCopy } from "react-icons/md";
+import { Button, Center, Flex, Icon, IconButton, Text } from '@chakra-ui/react';
+import { MdOutlineContentCopy } from "react-icons/md";
 import { Toaster, toaster } from "@/components/ui/toaster"
 
 function UUIDGenerator() {
@@ -28,19 +27,19 @@ function UUIDGenerator() {
     }
 
     return (
-        <div className='uuidGenerator'>
+        <Center flexDir="column" gap="1">
             <div>
                 <Button onClick={generateUUID} colorPalette="blue" size="md" variant="surface">
                     Generate & Copy
                 </Button>
             </div>
             <Flex align-items="baseline">
-                <Text fontSize="2em" fontFamily={['Courier New', 'Courier', 'monospace',]}>{uuidValue}
+                <Text fontSize={{ base: '1em', md: "2em" }} fontFamily={['Courier New', 'Courier', 'monospace',]}>{uuidValue}
                     <IconButton size='sm' variant="surface" onClick={copyUuidToClipboard}><MdOutlineContentCopy fill='#333' /></IconButton>
                 </Text>
             </Flex>
             <Toaster />
-        </div>
+        </Center>
     )
 }
 
